@@ -1,1 +1,70 @@
 {/*MONGO=mongodb+srv://book:book@cluster0.dwxdm.mongodb.net/booking?retryWrites=true&w=majority*/}
+/*import React, { useRef } from 'react'
+AIzaSyDmqiS9byASGHAqF1b2oV7p5bFqA5rDtrA
+AIzaSyCCOfJm5qP7YNDNd4f3lpBKR7CVmn0yib8 mch ta3y
+https://console.cloud.google.com/google/maps-apis/credentials?authuser=1&project=camping-355510
+//MONGO=mongodb+srv://media:media@cluster0.awxky.mongodb.net/media?retryWrites=true&w=majority
+import emailjs from '@emailjs/browser';
+import './contact.css'
+function Contact() {
+  const form = useRef();
+ const sendEmail = (e) => {
+  e.preventDefault();
+  emailjs.sendForm('service_ormuazf', 'template_aslroqb', form.current, 'user_NmxgRLkP0IXBhLrEt6G9q')
+  .then((result)=>{
+    console.log(result.text);
+  }, (error) =>{
+    console.log(error.text);
+  } )
+ }
+  return (
+    <div>
+    
+    <form classNam='formContact' ref={form} onSubmit={sendEmail}>
+    <h2 className='titlee' > contact us </h2>
+   
+    <input type="text"
+    id="name"
+    name="name"
+    placeholder="name : "
+    className='put'
+
+
+/>
+
+<input type="text"
+id="phone"
+name="phone"
+placeholder="phone :"
+className='put'
+ />
+
+ 
+    
+    <input type="mail"
+    id="email"
+    name="email"
+
+    placeholder="email : "
+    className='put'/>
+ 
+
+   
+   
+    <textarea name="message" 
+    placeholder="message : "/>
+    <div><input
+    
+    className="ggg put"
+    type="submit"
+    value="Envoyer"
+   
+/></div>
+  </form>
+
+    
+    </div>
+  )
+}
+
+export default Contact*/

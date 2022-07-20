@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-
+import path from 'path';
 
 // routes
 import AuthRoute from './routes/AuthRoute.js'
@@ -14,19 +14,22 @@ import ChatRoute from './routes/ChatRoute.js'
 import MessageRoute from './routes/MessageRoute.js'
 import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
+import  formRoutes from"./routes/formRoute.js";
+import  imageRoute from"./routes/imageRoute.js";
 import cookieParser from "cookie-parser";
 
 const app = express();
 
 
 
-
+// 
 
 
 // middleware
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+app.use(formRoutes)
 // to serve images inside public folder
 app.use(express.static('public')); 
 app.use('/images', express.static('images'));
@@ -49,8 +52,10 @@ mongoose.connection.on("disconnected", () => {
   console.log("mongoDB disconnected!");
 });
 
-app.use("/api/hotels", hotelsRoute);
-app.use("/api/rooms", roomsRoute);
+app.use("/images", imageRoute);
+app.use("/use", formRoutes);
+app.use("/hotels", hotelsRoute);
+app.use("/rooms", roomsRoute);
 app.use('/auth', AuthRoute);
 app.use('/user', UserRoute)
 app.use('/posts', PostRoute)
